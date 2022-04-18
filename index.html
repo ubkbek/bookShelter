@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="./css/main.css">
+    <title>Exam4</title>
+</head>
+<body>
+    <!-- header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__container d-flex align-items-baseline justify-content-between my-3">
+                <div class="header__left-side d-flex justify-content-between align-items-baseline">
+                    <h1 class="visually-hidden">Search your favourite books</h1>
+                    <a class="d-inline-block" href="#">
+                        <img class="d-inline-block" src="./images/logo.svg" alt="logo img" width="226" height="44">
+                    </a>
+
+                    <form id="form">
+                        <div class="input-group position-relative">
+                            <span class="lupa-img bg-transparent border-0 input-group-text position-absolute tt" id="basic-addon1">
+                                <img src="./images/lupa.svg" alt="lupa">
+                            </span>
+                            <input id="search-input" class="search-input ms-5 ps-5 border-0 rounded-pill p-3 border-1" type="text" class="form-control" placeholder="Search books" aria-label="Username" aria-describedby="basic-addon1">
+                        </div>
+                    </form>
+                </div>
+
+                <button class="border-0 bg-transparent">
+                    <img src="./images/sunBtn.svg" alt="dark mode">
+                </button>
+            </div>
+        </div>
+    </header>
+
+
+    <main>
+        <!-- search result and newest -->
+        <section class="result__section py-2">
+            <div class="container row d-flex justify-content-end align-items-center">
+                <div class="col-9 ps-0">
+                    <div class="d-flex justify-content-between align-items-center py-2 result">
+                        <h2 class="visually-hidden">Show</h2>
+                        <p id="show-notFound" class="m-0">Showing <span class="countResult">0</span> Result(s)</p>
+
+                        <button type="button" class="newest_btn btn btn-secondary px-3 d-flex align-items-center border-0 text-white">
+                            <img class="me-1" src="./images/calendar.svg" alt="calendar" width="24" height="24">
+                            Order by newest
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- hero -->
+        <section>
+            <div class="container row d-flex justify-content-between align-items-start">
+                <!-- Bookmarks -->
+                <div class="col-3  border-end bookmarks__side">
+                    <h2 class="h4 pt-3 fw-light">Bookmarks</h2>
+
+                    <p>
+                        If you don't like to read, you haven't found the right book
+                    </p>
+
+                    <ul id="bookmarks_wrapper" class="list-unstyled p-0 m-0">
+                        <!-- render bookmarks -->
+                    </ul>
+                </div>
+
+                <!-- Cards -->
+                <div id="books_wrapper" class="col-9 ps-0 bg-light ms-0 pb-5 row pt-5 gap ps-5">
+
+                    <!-- render card of books -->
+
+
+
+
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <template id="bookCardTemplate">
+        <div class="col-4 book_card mb-4 bg-white rounded-2">
+            <div class="mb-3 mt-3">
+                <img id="book_img" class="ms-4" src="./images/book.png" alt="book" width="202" height="202">
+            </div>
+            <p id="book_title">Title</p>
+            <p id="book_author" class="mb-0">Year</p>
+            <p id="book_year">Year</p>
+
+            <div class="btn-group d-flex justify-content-between mb-2" role="group" aria-label="Basic example">
+                <button id="bookmark_btn" class="w-50 border-0 rounded-2 btn btn-warning me-2" type="button">Bookmark</button>
+                <button id="more_info_btn" class="btn btn-outline-info border-2 rounded-2 w-50" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">More info</button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="modal_book-title" id="offcanvasRightLabel">Python</h5>
+                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+
+                        <img id="modal_book-img" class="ms-5 mb-5" src="./images/book.png" alt="book_img" width="230" height="300">
+
+                        <p id="modal_book-info" class="mb-5">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Natus voluptas placeat culpa exercitationem itaque voluptate consectetur consequatur? Repudiandae numquam fugit quis nobis unde esse facilis illo vel. Odio, iste vero.
+                        </p>
+
+                        <div class="d-flex align-items-center">
+                            <p>Author:
+                                <span id="modal_book-author">ubk</span>
+                                <span id="modal_book-authors">2</span>
+                            </p>
+
+
+                        </div>
+                        <p>Published :  <span class="badge bg-info p-2 rounded-3 ms-3" id="modal_book-year">2001</span></p>
+                        <p>Publishers:  <span class="badge bg-info p-2 rounded-3 ms-3" id="modal_book-publishers">Hollman</span></p>
+                        <p>Categories:  <span class="badge bg-info p-2 rounded-3 ms-3" id="modal_book-categories">computers</span></p>
+                        <p>Pages Count::  <span class="badge bg-info p-2 rounded-3 ms-3" id="modal_book-pages-count">212</span></p>
+
+                        <div class="d-flex justify-content-end mt-5">
+                            <a href="" id="modal_read-btn" class="btn btn-secondary px-4" target="_blank">Read</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-100 mb-3">
+                <a target="blank" id="book_read-btn" href="" type="button" class="btn btn-secondary w-100">Read</a>
+            </div>
+        </div>
+    </template>
+
+    <template id="bookmarkTemplate">
+        <li class="d-flex justify-content-between align-items-center rounded-3 bg-light p-3 mb-3">
+            <div>
+                <h3 id="bookmark_title" class="m-0 mb-1 h6 fw-light">Python</h3>
+                <p id="bookmark_author" class="m-0 text-secondary">David M. Beazley</p>
+            </div>
+            <div class="btn-group" role="group" aria-label="Basic example">
+                <a id="bookmark-read-link" href="" type="button" class="btn p-0" target="_blank">
+                    <img src="./images/book-open.svg" alt="book-img" width="24" height="24">
+                </a>
+                <button id="bookmark-del-btn" type="button" class="btn p-0 ps-2">
+                    <img id="del-img" src="./images/delete.svg" alt="delete-img" width="24" height="24">
+                </button>
+            </div>
+        </li>
+    </template>
+
+    <script src="./js/main.js"></script>
+    <script src="./bootstrap/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,127 @@
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/rubik-v19-latin-regular.woff2') format('woff2'),
+    url('../fonts/rubik-v19-latin-regular.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Rubik';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/rubik-v19-latin-500.woff2') format('woff2'),
+    url('../fonts/rubik-v19-latin-500.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('../fonts/noto-sans-v26-latin-regular.eot');
+    src: url('../fonts/noto-sans-v26-latin-regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/noto-sans-v26-latin-regular.woff2') format('woff2'),
+    url('../fonts/noto-sans-v26-latin-regular.woff') format('woff'),
+    url('../fonts/noto-sans-v26-latin-regular.ttf') format('truetype'),
+    url('../fonts/noto-sans-v26-latin-regular.svg#NotoSans') format('svg');
+}
+
+@font-face {
+    font-family: 'Noto Sans';
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url('../fonts/noto-sans-v26-latin-500.eot');
+    src: url('../fonts/noto-sans-v26-latin-500.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/noto-sans-v26-latin-500.woff2') format('woff2'),
+    url('../fonts/noto-sans-v26-latin-500.woff') format('woff'),
+    url('../fonts/noto-sans-v26-latin-500.ttf') format('truetype'),
+    url('../fonts/noto-sans-v26-latin-500.svg#NotoSans') format('svg');
+}
+
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Rubik', Arial, sans-serif;
+
+}
+
+p{
+    font-family: 'Noto Sans', Arial, sans-serif;
+    font-weight: 500;
+}
+
+.container{
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.header__input::before{
+    content: "";
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    background-color: red;
+    background-image: url("./../images/lupa.svg");
+}
+
+.search-input{
+    background: #F8FAFD;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.1);
+    width: 670px;
+}
+
+.input-group{
+    position: relative;
+}
+
+.lupa-img{
+    position: absolute;
+    transform: translate(55px, 13px)
+}
+
+.border-color{
+    border-top: 2px solid #cccccc50;
+    border-bottom: 2px solid #cccccc50;
+}
+
+.border-right{
+    border-right: 2px solid #cccccc50;
+}
+
+.newest_btn{
+    background-color: #A6B0C3;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    padding: 5px 13px;
+}
+
+.result__section{
+    border-top: 1px solid #00000026;
+    border-bottom: 1px solid #00000026;
+}
+
+.result{
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 17px;
+    color: #222531;
+}
+
+.bookmarks__side{
+    margin-right: 1px solid #00000026;
+}
+
+.card-width{
+    min-width: 30%;
+}
+
+.book_card{
+    min-height: 400px;
+}
